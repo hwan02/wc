@@ -12,7 +12,6 @@ export default function Home() {
                 2025년 10월 18일 18시
               </p>
               <Link href="tel: 55555555" className="hover:underline">555-555</Link>
-              <ModeToggle/>
             </div>
           </main>
         </div>
