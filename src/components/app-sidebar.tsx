@@ -50,7 +50,7 @@ const projects = [
   {
     id: 7,
     title: "갤러리",
-    url: "#",
+    href: '/home/gallery',
   },
   {
     id: 8,

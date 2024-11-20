@@ -11,12 +11,12 @@ export function Header() {
 
           <div className="flex items-center gap-2">
 
-            <NavButton href="/home" label="Home" icon={HomeIcon}/>
-            <Link href="/home" className="flex justify-center items-center gap-2 ml-0"
-                  title="Home"/>
-            <h1 className="hidden sm:block text-xl font-bold m-0 mt-1">
-              WC
-            </h1>
+            {/*<NavButton href="/home" label="Home" icon={HomeIcon}/>*/}
+            {/*<Link href="/home" className="flex justify-center items-center gap-2 ml-0"*/}
+            {/*      title="Home"/>*/}
+            {/*<h1 className="hidden sm:block text-xl font-bold m-0 mt-1">*/}
+            {/*  WC*/}
+            {/*</h1>*/}
           </div>
 
           <div className="flex items-center">
