@@ -6,7 +6,7 @@ export default async function WCLayout({
 }){
   return (
       <div className="mx-auto w-full max-w-7xl">
-        <Header/>
+        {/*<Header/>*/}
         <div className="px-4 py-2">
           {children}
         </div>

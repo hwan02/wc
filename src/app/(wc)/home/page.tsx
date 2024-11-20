@@ -10,8 +10,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="bg-black bg-home-img bg-conver bg-center">
-      <main className="flex flex-col justify-center text-center max-w-5xl mx-auto h-dvh">
-        <div className="flex flex-col gap-6 p-12 rounded-xl bg-gray-500 w-4/5 sm:max-w-96 mx-auto text-white sm:text-2xl">
+      <main className="flex flex-col justify-center text-center max-w-5xl mx-auto">
+        <div className="flex flex-col gap-6 p-12 rounded-xl bg-gray-500 w-5/6 mx-auto text-white sm:text-2xl">
           <div>
             <Image className="m-0 rounded-xl" src="images/next.svg" width={300} height={300}
                    sizes="300px" alt="큰 사진" priority={true} title="큰 사진" />
