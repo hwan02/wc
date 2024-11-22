@@ -67,18 +67,12 @@ export default function AttendanceModal() {
           <p>{hall}</p>
         </div>
 
-        <div className="space-x-4 mb-8">
+        <div className="mb-8">
           <button 
             onClick={() => {/* 참석 로직 */}}
-            className="px-8 py-3 bg-pink-50 text-pink-700 border border-pink-200 rounded-full hover:bg-pink-100 transition-colors font-medium"
+            className="w-40 py-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors font-medium shadow-md hover:shadow-lg"
           >
-            참석
-          </button>
-          <button 
-            onClick={() => {/* 불참석 로직 */}}
-            className="px-8 py-3 bg-gray-50 text-gray-700 border border-gray-200 rounded-full hover:bg-gray-100 transition-colors font-medium"
-          >
-            불참석
+            참석하기
           </button>
         </div>
 

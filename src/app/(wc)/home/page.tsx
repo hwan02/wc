@@ -12,9 +12,13 @@ import GuestBook from "@/app/(wc)/home/guestbook/GuestBook";
 import Share from "@/app/(wc)/home/share/Share";
 import { useIsMobile } from "@/components/hooks/use-mobile";
 import AttendanceModal from "@/app/(wc)/home/attendance/AttendanceModal";
+import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
 
 export default function Home() {
   const isMobile = useIsMobile();
+  useIntersectionObserver();
+  
+  const animationClass = "opacity-0 translate-x-[-100px] transition-all duration-1000 ease-out data-[visible=true]:translate-x-0 data-[visible=true]:opacity-100";
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-rose-50 via-pink-50/50 to-white relative overflow-hidden">
@@ -30,7 +34,7 @@ export default function Home() {
       {/* 메인 컨텐츠 */}
       <div className="relative max-w-4xl mx-auto px-4">
         {/* 큰 사진 */}
-        <div className="w-full aspect-square">
+        <div className={`w-full aspect-square ${animationClass}`}>
           <Image 
             className="m-0 rounded-xl w-full h-full object-cover"
             src="/images/first.jpg" 
@@ -43,41 +47,41 @@ export default function Home() {
           />
         </div>
         {/* 예식 일시 장소 */}
-        <section id="calendar" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Invitation />
         </section>
         {/* 혼주에게 연락하기 */}
         {/* 달력표시 & D-day */}
-        <section id="calendar" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Calendar/>
         </section>
         {/* 갤러리 */}
-        <section id="gallery" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Gallery />
         </section>
         {/* 오시는 길 */}
-        <section id="account" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Location />
         </section>
         {/* 참석여부전달 */}
-        <section id="attendance" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <AttendanceModal />
         </section>
         
         {/* 마음 전하실 곳 */}
-        <section id="account" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Account />
         </section>
         {/* 안내사항 */}
-        <section id="guide" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Guide />
         </section>
         {/* 방명록 */}
-        <section id="guestbook" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <GuestBook />
         </section>
         {/* 공유하기 */}
-        <section id="share" className="py-12">
+        <section className={`py-12 ${animationClass}`}>
           <Share />
         </section>
       </div>

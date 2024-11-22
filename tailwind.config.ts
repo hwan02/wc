@@ -89,12 +89,34 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: '0', transform: 'translate(-50%, -40%)' },
           '100%': { opacity: '1', transform: 'translate(-50%, -50%)' }
+        },
+        fadeInUp: {
+          '0%': { 
+            opacity: '0',
+            transform: 'translateY(20px)'
+          },
+          '100%': { 
+            opacity: '1',
+            transform: 'translateY(0)'
+          },
+        },
+        slideIn: {
+          '0%': { 
+            opacity: '0',
+            transform: 'translateX(-100px)'
+          },
+          '100%': { 
+            opacity: '1',
+            transform: 'translateX(0)'
+          },
         }
       },
       animation: {
         "appear": "appear 1s ease-in-out",
         "slide": "slide 750ms ease-in-out",
-        'fade-in': 'fadeIn 0.2s ease-out forwards'
+        'fade-in': 'fadeIn 0.2s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
+        'slide-in': 'slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards'
       },
     }
   },
