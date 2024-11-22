@@ -17,12 +17,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | WC",
-    default: "WC",
+  title: '서승환 ❤️ 홍예나 결혼합니다.',
+  description: '서승환 ❤️ 홍예나 결혼식에 초대합니다.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+    ],
   },
-  description: "SHYN",
-  applicationName: "WC"
 };
 
 export default function RootLayout({

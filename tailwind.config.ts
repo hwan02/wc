@@ -118,6 +118,9 @@ const config: Config = {
         'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
         'slide-in': 'slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards'
       },
+      fontFamily: {
+        'serif-kr': ['"Noto Serif KR"', 'serif'],
+      },
     }
   },
   plugins: [require("tailwindcss-animate")],

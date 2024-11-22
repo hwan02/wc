@@ -13,6 +13,7 @@ import Share from "@/app/(wc)/home/share/Share";
 import { useIsMobile } from "@/components/hooks/use-mobile";
 import AttendanceModal from "@/app/(wc)/home/attendance/AttendanceModal";
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
+import { useState, useEffect } from 'react'
 
 export default function Home() {
   const isMobile = useIsMobile();
