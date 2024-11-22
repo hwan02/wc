@@ -92,13 +92,14 @@
       ]
     }
   ],
-  "mapInfo": {
-    "address1": "아펠가모 공덕 라로브홀",
+  "venue": {
+    "name": "L65 웨딩호텔컨벤션",
+    "address1": "L65 웨딩호텔컨벤션 가든홀",
     "address2": "서울 마포구 마포대로 92\n효성해링턴스퀘어 B동 7층\n02-2197-0230",
     "naverMap": "https://map.naver.com/p/directions/-/14132311.1099497,4514956.9078363,%EC%95%84%ED%8E%A0%EA%B0%80%EB%AA%A8%20%EA%B3%B5%EB%8D%95,1929913788,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
     "kakaoMap": "https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,489503,1123003&rt1=&rt2=%EC%95%84%ED%8E%A0%EA%B0%80%EB%AA%A8%20%EA%B3%B5%EB%8D%95%EC%A0%90&rtIds=,630786038",
-    "lat": 37.54222,
-    "lon": 126.952708
+    "latitude": 37.54222,
+    "longitude": 126.952708
   },
   "locationInfo": [
     {
@@ -134,65 +135,5 @@
         "description": "웨딩 사진 1"
       }
     ]
-  },
-  "location": {
-    "venue": {
-      "name": "웨딩홀 이름",
-      "address": "주소",
-      "latitude": 37.5665,
-      "longitude": 126.9780
-    }
-  },
-  "accounts": [
-    {
-      "host": "신랑측",
-      "accountInfo": [
-        {
-          "name": "장세모",
-          "relation": "신랑",
-          "bank": "카카오뱅크",
-          "account": "1234-56-789012",
-          "kakaopayAccount": "",
-          "tossAccount": ""
-        },
-        {
-          "name": "장아빠",
-          "relation": "아버지",
-          "bank": "농협",
-          "account": "123-45-678901"
-        },
-        {
-          "name": "이엄마",
-          "relation": "어머니",
-          "bank": "농협",
-          "account": "123-45-678901"
-        }
-      ]
-    },
-    {
-      "host": "신부측",
-      "accountInfo": [
-        {
-          "name": "황네모",
-          "relation": "신부",
-          "bank": "토스뱅크",
-          "account": "1234-5678-9012",
-          "kakaopayAccount": "",
-          "tossAccount": ""
-        },
-        {
-          "name": "황아빠",
-          "relation": "아버지",
-          "bank": "농협",
-          "account": "123-45-678901"
-        },
-        {
-          "name": "이엄마",
-          "relation": "어머니",
-          "bank": "농협",
-          "account": "123-45-678901"
-        }
-      ]
-    }
-  ]
+  }
 }

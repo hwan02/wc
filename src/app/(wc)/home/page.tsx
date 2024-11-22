@@ -11,6 +11,7 @@ import Guide from "@/app/(wc)/home/guide/Guide";
 import GuestBook from "@/app/(wc)/home/guestbook/GuestBook";
 import Share from "@/app/(wc)/home/share/Share";
 import { useIsMobile } from "@/components/hooks/use-mobile";
+import AttendanceModal from "@/app/(wc)/home/attendance/AttendanceModal";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -59,6 +60,9 @@ export default function Home() {
           <Location />
         </section>
         {/* 참석여부전달 */}
+        <section id="attendance" className="py-12">
+          <AttendanceModal />
+        </section>
         
         {/* 마음 전하실 곳 */}
         <section id="account" className="py-12">
