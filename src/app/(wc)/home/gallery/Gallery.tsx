@@ -13,7 +13,7 @@ export default function Gallery() {
   useEffect(() => {
     // 1부터 시작하는 연속된 숫자의 이미지들을 배열로 생성
     const generateImagePaths = () => {
-      const imageCount = 12 // 실제 이미지 개수에 맞게 조정하세요
+      const imageCount = 6 // 실제 이미지 개수에 맞게 조정하세요
       return Array.from({ length: imageCount }, (_, i) => `/images/gallery/${i + 1}.jpg`)
     }
 
@@ -21,8 +21,10 @@ export default function Gallery() {
   }, [])
 
   const handleImageClick = (imageSrc: string) => {
-    setSelectedImage(imageSrc)
-    setIsModalOpen(true)
+    const index = images.findIndex(img => img === imageSrc);
+    setCurrentImageIndex(index);
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
   }
 
   const handlePrevious = () => {
@@ -55,12 +57,9 @@ export default function Gallery() {
 
       {isModalOpen && selectedImage && (
         <GalleryModal
-          imageSrc={images[currentImageIndex]}
+          images={images.map(src => ({ src }))}
           onClose={() => setIsModalOpen(false)}
-          currentIndex={currentImageIndex}
-          totalImages={images.length}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
+          initialIndex={currentImageIndex}
         />
       )}
         </div>

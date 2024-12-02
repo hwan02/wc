@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/app-sidebar"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,31 +44,18 @@ export default function RootLayout({
           bg-[url('/images/floral.png')] bg-repeat bg-opacity-10
         `}
       >
-        {/* 상단 장식 */}
-        {/* <div className="fixed top-0 left-0 w-full h-40 pointer-events-none"> */}
-          {/* <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/floral-top.png')] bg-contain bg-no-repeat bg-center opacity-20" /> */}
-        {/* </div> */}
-
         <div className="relative min-h-screen backdrop-blur-sm">
-          <SidebarProvider>
-            <AppSidebar />
-            <main className="px-2 w-full">
-              <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-                disableTransitionOnChange
-              >
-                <SidebarTrigger />
-                {children}
-              </ThemeProvider>
-            </main>
-          </SidebarProvider>
+          <main className="px-2 w-full">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </main>
         </div>
-        {/* 하단 장식 */}
-        {/* <div className="fixed bottom-0 left-0 w-full h-40 pointer-events-none"> */}
-          {/* <div className="absolute bottom-0 left-0 w-full h-full bg-[url('/images/floral-bottom.png')] bg-contain bg-no-repeat bg-center opacity-20" /> */}
-        {/* </div> */}
 
         {/* 배경 장식 요소들 */}
         <div className="fixed top-1/4 -left-20 w-40 h-40 bg-rose-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" />

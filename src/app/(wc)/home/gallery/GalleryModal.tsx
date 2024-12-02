@@ -1,23 +1,44 @@
 'use client'
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useState } from 'react'
+import Image from 'next/image'
+
+interface ImageType {
+  src: string;
+  alt?: string;
+}
 
 interface GalleryModalProps {
-  imageSrc: string;
+  images: ImageType[];
   onClose: () => void;
-  currentIndex: number;
-  totalImages: number;
-  onPrevious: () => void;
-  onNext: () => void;
+  initialIndex?: number;
 }
 
 export default function GalleryModal({ 
-  imageSrc, 
-  onClose, 
-  currentIndex, 
-  totalImages,
-  onPrevious,
-  onNext 
+  images, 
+  onClose,
+  initialIndex = 0
 }: GalleryModalProps) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   return (
     <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
       <button
@@ -29,28 +50,34 @@ export default function GalleryModal({
       
       <div className="relative w-screen h-screen flex items-center justify-center">
         <button
-          onClick={onPrevious}
-          className="absolute left-4 text-white text-4xl z-10 hover:bg-white/10 p-2 rounded-full"
+          onClick={handlePrevious}
+          className="absolute left-6 text-white text-6xl z-10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 bg-black/30"
+          aria-label="Previous image"
         >
-          ‹
+          ←
         </button>
 
-        <img
-          src={imageSrc}
-          alt="Gallery Image"
-          className="max-w-[95vw] max-h-[90vh] object-contain"
+        <Image
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt || `Gallery Image ${currentIndex + 1}`}
+          className="w-[90%] h-[90%] object-contain"
+          width={1920}
+          height={1080}
         />
 
         <button
-          onClick={onNext}
-          className="absolute right-4 text-white text-4xl z-10 hover:bg-white/10 p-2 rounded-full"
+          onClick={handleNext}
+          className="absolute right-6 text-white text-6xl z-10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 bg-black/30"
+          aria-label="Next image"
         >
-          ›
+          →
         </button>
       </div>
 
-      <div className="absolute bottom-4 text-white">
-        {currentIndex + 1} / {totalImages}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/50 px-4 py-2 rounded-full">
+        <span className="text-white text-lg font-medium">
+          {currentIndex + 1} / {images.length}
+        </span>
       </div>
     </div>
   )

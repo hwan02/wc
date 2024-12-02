@@ -14,6 +14,7 @@ import { useIsMobile } from "@/components/hooks/use-mobile";
 import AttendanceModal from "@/app/(wc)/home/attendance/AttendanceModal";
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
 import { useState, useEffect } from 'react'
+import NavBar from "@/components/ui/NavBar";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -23,6 +24,7 @@ export default function Home() {
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-rose-50 via-pink-50/50 to-white relative overflow-hidden">
+      <NavBar />
       {/* 배경 장식 요소들 */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full 
@@ -35,7 +37,7 @@ export default function Home() {
       {/* 메인 컨텐츠 */}
       <div className="relative max-w-4xl mx-auto px-4">
         {/* 큰 사진 */}
-        <div className={`w-full aspect-square ${animationClass}`}>
+        <div className={`w-full aspect-square ${animationClass}`} id="hero-image">
           <Image 
             className="m-0 rounded-xl w-full h-full object-cover"
             src="/images/first.jpg" 
