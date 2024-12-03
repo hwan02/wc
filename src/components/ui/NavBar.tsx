@@ -7,40 +7,46 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroImage = document.getElementById('hero-image');
-      if (!heroImage) return;
+      const gallerySection = document.getElementById('hero-image');
+      if (!gallerySection) {
+        setIsVisible(true);
+        return;
+      }
 
-      const heroRect = heroImage.getBoundingClientRect();
-      setIsVisible(heroRect.top < -heroRect.height);
+      const galleryRect = gallerySection.getBoundingClientRect();
+      setIsVisible(galleryRect.bottom <= 0);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    handleScroll(); // 초기 상태 체크
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav 
+    <header 
       className={`
-        fixed top-0 left-0 right-0 
-        h-16 bg-white/80 backdrop-blur-sm z-40 
-        flex items-center justify-between px-4
-        transition-all duration-500 ease-in-out
-        ${isVisible 
-          ? 'translate-y-0 opacity-100 shadow-md' 
-          : '-translate-y-full opacity-0'
-        }
+        w-full sticky top-0 left-0 right-0 z-[9999]
+        transition-opacity duration-300
+        ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
     >
-      <button className="p-2">
-        <RxHamburgerMenu size={24} />
-      </button>
-      
-      <div className="flex items-center gap-2 text-xl font-semibold">
-        승환 <FaHeart className="text-red-500" /> 예나
-      </div>
-      
-      <div className="w-10" />
-    </nav>
+      <nav 
+        className={`
+          w-full h-16 bg-white/70 backdrop-blur-sm
+          flex items-center justify-between px-4
+          shadow-md
+        `}
+      >
+        <button className="p-2">
+          <RxHamburgerMenu size={24} />
+        </button>
+        
+        <div className="flex items-center gap-2 text-xl font-semibold">
+          승환 <FaHeart className="text-red-500" /> 예나
+        </div>
+        
+        <div className="w-10" />
+      </nav>
+    </header>
   );
 }

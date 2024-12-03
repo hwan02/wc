@@ -23,8 +23,9 @@ export default function Home() {
   const animationClass = "opacity-0 translate-x-[-100px] transition-all duration-1000 ease-out data-[visible=true]:translate-x-0 data-[visible=true]:opacity-100";
   
   return (
+    <>
+    <NavBar />
     <main className="min-h-screen bg-gradient-to-b from-rose-50 via-pink-50/50 to-white relative overflow-hidden">
-      <NavBar />
       {/* 배경 장식 요소들 */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full 
@@ -89,5 +90,6 @@ export default function Home() {
         </section>
       </div>
     </main>
+    </>
   )
 }
