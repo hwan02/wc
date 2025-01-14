@@ -15,6 +15,7 @@ import AttendanceModal from "@/app/(wc)/home/attendance/AttendanceModal";
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
 import { useState, useEffect } from 'react'
 import NavBar from "@/components/ui/NavBar";
+import AttendanceForm from "@/app/(wc)/home/attendance/AttendanceForm";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -69,9 +70,9 @@ export default function Home() {
         </section>
         {/* 참석여부전달 */}
         <section className={`py-12 ${animationClass}`}>
-          <AttendanceModal />
+          {/* <AttendanceModal /> */}
+          <AttendanceForm />
         </section>
-        
         {/* 마음 전하실 곳 */}
         <section className={`py-12 ${animationClass}`}>
           <Account />
